@@ -9,6 +9,10 @@
         <label for="title" class="form-label">Nueva Tarea</label>
         <input type="text" name="title" id="title" class="form-control" placeholder="Escribe la tarea">
     </div>
+    <div class="mb-3">
+        <label for="priority" class="form-label">Prioridad <small>(1 es alta y 3 o menos es baja)</small> </label>
+        <input type="text" name="priority" id="priority" class="form-control" placeholder="Escribe la prioridad">
+    </div>
     <div class="d-flex flex-row justify-content-between">
         <button type="submit" class="btn btn-primary fw-bold fs-4">Añadir</button>
         <a href="{% url 'task_list' %}" class="btn btn-secondary fw-bold fs-4">Volver</a>

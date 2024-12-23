@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #212529;
+    margin: 0 auto;
+}
+
+.content-wrapper {
+    width: 80%;
+    max-width: 1200px;
+    background: #badfe4;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+td.priority-1 {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+td.priority-2 {
+    background-color: #ffcc00;
+    color: black;
+}
+
+td.priority-3 {
+    background-color: #4caf50;
+    color: white;
+}

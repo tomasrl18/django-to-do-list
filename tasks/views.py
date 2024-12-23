@@ -3,14 +3,15 @@ from .models import Task
 
 # Mostrar todas las tareas
 def task_list(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.all().order_by('priority')
     return render(request, 'tasks/task_list.html', {'tasks': tasks})
 
 # Añadir una nueva tarea
 def add_task(request):
     if request.method == 'POST':
         title = request.POST['title']
-        Task.objects.create(title=title)
+        priority = request.POST['priority']
+        Task.objects.create(title=title, priority=priority)
         return redirect('task_list')
     return render(request, 'tasks/add_task.html')
 

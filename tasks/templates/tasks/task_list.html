@@ -7,6 +7,7 @@
     <thead>
         <tr>
             <th>TASK</th>
+            <th>PRIORITY</th>
             <th>STATE</th>
             <th>ACTIONS</th>
         </tr>
@@ -15,9 +16,9 @@
         {% for task in tasks %}
             <tr>
                 <td>{{ task.title }}</td>
+                <td class="priority-{{ task.priority }}">{{ task.priority }}</td>
                 <td>
                     {% if task.completed %}
-                        <!-- Botón de "COMPLETED", cambia a "PENDING" al hacer clic -->
                         <a href="{% url 'task_toggle' task.id %}" class="badge btn btn-sm btn-success fw-bold">COMPLETED</a>
                     {% else %}
                         <span class="badge bg-warning">PENDING</span>
