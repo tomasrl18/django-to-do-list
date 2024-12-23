@@ -13,22 +13,22 @@
     </thead>
     <tbody>
         {% for task in tasks %}
-        <tr>
-            <td>{{ task.title }}</td>
-            <td>
-                {% if task.completed %}
-                <span class="badge bg-success">COMPLETED</span>
-                {% else %}
-                <span class="badge bg-warning">PENDING</span>
-                {% endif %}
-            </td>
-            <td>
-                {% if not task.completed %}
-                <a href="{% url 'complete_task' task.id %}" class="btn btn-sm btn-primary">COMPLETE</a>
-                {% endif %}
-                <a href="{% url 'delete_task' task.id %}" class="btn btn-sm btn-danger">DELETE</a>
-            </td>
-        </tr>
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>
+                    {% if task.completed %}
+                        <span class="badge bg-success">COMPLETED</span>
+                    {% else %}
+                        <span class="badge bg-warning">PENDING</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if not task.completed %}
+                        <a href="{% url 'complete_task' task.id %}" class="btn btn-sm btn-primary">COMPLETE</a>
+                    {% endif %}
+                    <a href="{% url 'delete_task' task.id %}" class="btn btn-sm btn-danger">DELETE</a>
+                </td>
+            </tr>
         {% endfor %}
     </tbody>
 </table>
