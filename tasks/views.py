@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task
 
 # Mostrar todas las tareas
@@ -25,4 +25,10 @@ def complete_task(request, task_id):
 def delete_task(request, task_id):
     task = Task.objects.get(id=task_id)
     task.delete()
+    return redirect('task_list')
+
+def task_toggle(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    task.completed = not task.completed  # Cambiar el estado de 'completed'
+    task.save()
     return redirect('task_list')
