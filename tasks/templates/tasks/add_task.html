@@ -1,0 +1,15 @@
+{% extends './base.html' %}
+
+{% block content %}
+<h1 class="text-center">Añadir Tarea</h1>
+
+<form method="POST" class="mt-4">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="title" class="form-label">Nueva Tarea</label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Escribe la tarea">
+    </div>
+    <button type="submit" class="btn btn-primary">Añadir</button>
+    <a href="{% url 'task_list' %}" class="btn btn-secondary">Volver</a>
+</form>
+{% endblock %}
