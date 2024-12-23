@@ -1,7 +1,7 @@
 {% extends './base.html' %}
 
 {% block content %}
-<h1 class="text-center">Añadir Tarea</h1>
+<h1 class="text-center fw-bold">Añadir Tarea</h1>
 
 <form method="POST" class="mt-4">
     {% csrf_token %}
@@ -9,7 +9,9 @@
         <label for="title" class="form-label">Nueva Tarea</label>
         <input type="text" name="title" id="title" class="form-control" placeholder="Escribe la tarea">
     </div>
-    <button type="submit" class="btn btn-primary">Añadir</button>
-    <a href="{% url 'task_list' %}" class="btn btn-secondary">Volver</a>
+    <div class="d-flex flex-row justify-content-between">
+        <button type="submit" class="btn btn-primary fw-bold fs-4">Añadir</button>
+        <a href="{% url 'task_list' %}" class="btn btn-secondary fw-bold fs-4">Volver</a>
+    </div>
 </form>
 {% endblock %}
