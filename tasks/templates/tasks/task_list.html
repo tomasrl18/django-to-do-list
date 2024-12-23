@@ -29,6 +29,7 @@
                         <a href="{% url 'complete_task' task.id %}" class="btn btn-sm btn-primary fw-bold">COMPLETE</a>
                     {% endif %}
                     <a href="{% url 'delete_task' task.id %}" class="btn btn-sm btn-danger fw-bold">DELETE</a>
+                    <a href="{% url 'edit_task' task.id %}" class="btn btn-sm btn-secondary fw-bold">EDIT</a>
                 </td>
             </tr>
         {% endfor %}
